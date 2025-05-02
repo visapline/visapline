@@ -1,0 +1,13 @@
+html,
+body,
+a,
+#root {
+  height: 100dvh; /* Usa dvh para compatibilidad con Safari */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Evita el scroll vertical */
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}

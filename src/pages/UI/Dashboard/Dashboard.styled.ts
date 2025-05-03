@@ -4,6 +4,7 @@ export const PageContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f3f4f6;
-  height: 100vh;
+  background-color:rgb(255, 255, 255);
+  width: 100%;
+  height: 95vh;
 `;

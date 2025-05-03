@@ -5,6 +5,11 @@ export const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80vw;
-  background-color: rgba(0, 76, 255, 0.64);
+  width: 100vw;
+  background-color: rgba(237, 242, 249, 0.96);
+`;
+
+export const ContentPage = styled.div`
+  display: flex;
+  width: 100%;
 `;

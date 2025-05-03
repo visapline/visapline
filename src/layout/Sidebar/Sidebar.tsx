@@ -1,9 +1,20 @@
 import { Container } from "./Sidebar.styled";
-export  function Sidebar() {
+
+interface SidebarProps {
+  expanded: boolean;
+  onHoverStart: () => void;
+  onHoverEnd: () => void;
+}
+
+export function Sidebar({ expanded, onHoverStart, onHoverEnd }: SidebarProps) {
   return (
-    <Container>
-        <h1>Sidebar</h1>
-        <p>Contenido del Sidebar</p>
+    <Container
+      expanded={expanded}
+      onMouseEnter={onHoverStart}
+      onMouseLeave={onHoverEnd}
+    >
+      <h1>Sidebar</h1>
+      <p>Contenido del Sidebar</p>
     </Container>
-  )
+  );
 }

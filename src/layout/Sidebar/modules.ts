@@ -1,8 +1,6 @@
-// modules.ts
 import { FiUsers, FiBarChart2, FiDollarSign } from "react-icons/fi";
-import { FaHouseSignal } from "react-icons/fa6";
+import { FaHouseSignal, FaUsers } from "react-icons/fa6";
 import { IconType } from "react-icons";
-import { FaUsers } from "react-icons/fa6";
 
 export interface Module {
   title: string;
@@ -10,50 +8,73 @@ export interface Module {
   options: { name: string; path: string }[];
 }
 
-export const modules: Module[] = [
+export interface ModuleSection {
+  label: string; // nombre real de la sección
+  modules: Module[];
+}
+
+export const moduleSections: ModuleSection[] = [
   {
-    title: "Dashboard",
-    icon: FiBarChart2,
-    options: [{ name: "Dashboard", path: "/dashboard" }],
-  },
-  {
-    title: "Gestión Cliente",
-    icon: FiUsers,
-    options: [
-      { name: "Ubicaciones", path: "/gestioncliente/ubicaciones" },
-      { name: "Clientes", path: "/gestioncliente/clientes" },
+    label: "Principal",
+    modules: [
+      {
+        title: "Dashboard",
+        icon: FiBarChart2,
+        options: [{ name: "Dashboard", path: "/dashboard" }],
+      },
     ],
   },
   {
-    title: "Vistas Avanzadas",
-    icon: FiBarChart2,
-    options: [
-      { name: "Contrato", path: "/vistas/contrato" },
-
+    label: "Gestión de Clientes",
+    modules: [
+      {
+        title: "Gestión Cliente",
+        icon: FiUsers,
+        options: [
+          { name: "Ubicaciones", path: "/gestioncliente/ubicaciones" },
+          { name: "Clientes", path: "/gestioncliente/clientes" },
+        ],
+      },
     ],
   },
   {
-    title: "Finanzas",
-    icon: FiDollarSign,
-    options: [
-      { name: "Ingresos", path: "/finanzas/ingresos" },
-
+    label: "Análisis y Reportes",
+    modules: [
+      {
+        title: "Vistas Avanzadas",
+        icon: FiBarChart2,
+        options: [{ name: "Contrato", path: "/vistas/contrato" }],
+      },
     ],
   },
   {
-    title: "Gestión Redes",
-    icon: FaHouseSignal,
-    options: [
-      { name: "Redes", path: "/gestionredes/redes" },
-
+    label: "Finanzas",
+    modules: [
+      {
+        title: "Finanzas",
+        icon: FiDollarSign,
+        options: [{ name: "Ingresos", path: "/finanzas/ingresos" }],
+      },
     ],
   },
   {
-    title: "Gestión Terceros",
-    icon: FaUsers,
-    options: [
-      { name: "Terceros", path: "/gestionterceros/terceros" },
-
+    label: "Infraestructura",
+    modules: [
+      {
+        title: "Gestión Redes",
+        icon: FaHouseSignal,
+        options: [{ name: "Redes", path: "/gestionredes/redes" }],
+      },
+    ],
+  },
+  {
+    label: "Terceros",
+    modules: [
+      {
+        title: "Gestión Terceros",
+        icon: FaUsers,
+        options: [{ name: "Terceros", path: "/gestionterceros/terceros" }],
+      },
     ],
   },
 ];

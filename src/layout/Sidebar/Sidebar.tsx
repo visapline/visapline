@@ -1,19 +1,18 @@
-// Sidebar.tsx
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Container,
+  SubContainer,
   ModuleItem,
   ModuleTitle,
   SubMenu,
   SubItem,
   ModuleHeader,
   IconWrapper,
+  SectionLabel,
+  ChevronIcon,
 } from "./Sidebar.styled";
-import { modules } from "./modules";
-import { useNavigate } from "react-router-dom";
-
-// Dentro del componente Sidebar:
-
+import { moduleSections } from "./modules";
 
 interface SidebarProps {
   expanded: boolean;
@@ -35,31 +34,42 @@ export function Sidebar({ expanded, onHoverStart, onHoverEnd }: SidebarProps) {
       onMouseEnter={onHoverStart}
       onMouseLeave={onHoverEnd}
     >
-      {modules.map(({ title, icon: Icon, options }) => (
-        <ModuleItem
-          key={title}
-          onMouseEnter={() => setOpenModule(title)}
-          onMouseLeave={() => setOpenModule(null)}
-          onClick={() => toggleModule(title)}
-        >
-          <ModuleHeader $expanded={expanded}>
-            <IconWrapper $expanded={expanded}>
-              <Icon />
-            </IconWrapper>
-            {expanded && <ModuleTitle $expanded={expanded}>{title}</ModuleTitle>}
-          </ModuleHeader>
+      <SubContainer>
+        {moduleSections.map(({ label, modules }) => (
+          <div key={label}>
+            {expanded && <SectionLabel>{label}</SectionLabel>}
 
-          {expanded && openModule === title && (
-            <SubMenu>
-              {options.map(({ name, path }) => (
-                <SubItem key={path} onClick={() => navigate(path)}>
-                  {name}
-                </SubItem>
-              ))}
-            </SubMenu>
-          )}
-        </ModuleItem>
-      ))}
+            {modules.map(({ title, icon: Icon, options }) => (
+              <ModuleItem
+                key={title}
+                onClick={() => toggleModule(title)} // 👈 Solo clic, sin hover
+              >
+                <ModuleHeader $expanded={expanded}>
+                  <IconWrapper $expanded={expanded}>
+                    <Icon />
+                  </IconWrapper>
+                  {expanded && (
+                    <>
+                      <ModuleTitle $expanded={expanded}>{title}</ModuleTitle>
+                      <ChevronIcon $open={openModule === title} />
+                    </>
+                  )}
+                </ModuleHeader>
+
+                {expanded && openModule === title && (
+                  <SubMenu>
+                    {options.map(({ name, path }) => (
+                      <SubItem key={path} onClick={() => navigate(path)}>
+                        {name}
+                      </SubItem>
+                    ))}
+                  </SubMenu>
+                )}
+              </ModuleItem>
+            ))}
+          </div>
+        ))}
+      </SubContainer>
     </Container>
   );
 }

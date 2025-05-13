@@ -1,13 +1,27 @@
-html,
-body,
-a,
-#root {
-  height: 100dvh; /* Usa dvh para compatibilidad con Safari */
+html, body, a, #root {
+  height: 100dvh;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Evita el scroll vertical */
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400; /* Peso por defecto */
   -webkit-tap-highlight-color: transparent;
-  tap-highlight-color: transparent;
+}
+
+/* Estilos tipográficos jerárquicos */
+h1 {
+  font-weight: 600; /* Semi-bold */
+}
+
+h2 {
+  font-weight: 600; /* Semi-bold */
+}
+
+h3 {
+  font-weight: 500; /* Medium */
+}
+
+button, input, textarea {
+  font-family: inherit; /* Hereda Poppins */
 }

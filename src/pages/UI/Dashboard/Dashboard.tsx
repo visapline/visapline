@@ -1,11 +1,21 @@
-import { PageContainer} from "./Dashboard.styled.ts"
+import {PageContainer, ContainerMain, Encabezado} from "./Dashboard.styled.ts"
+import { Breadcrumb } from "../../../components/UI/BreadCrumb";
 
 export function Dashboard() {
   return (
     <PageContainer>
-        <h1>Dashboard</h1>
-        <p>Welcome to the Dashboard!</p>
-        <p>This is a protected route.</p>
-    </PageContainer>
+        <ContainerMain>
+          <Encabezado>
+            <label>
+              {" "}
+              <h1 style={{ margin: 0, fontSize: "24px", fontWeight: 600 }}>
+                Dashboard
+              </h1>
+            </label>
+  
+            <Breadcrumb />
+          </Encabezado>
+        </ContainerMain>
+      </PageContainer>
   )
 }

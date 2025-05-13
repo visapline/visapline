@@ -9,7 +9,7 @@ export const ButtonOpenSidebarContainer = styled.div`
   justify-content: center;
   cursor: pointer;
   transition: background-color 0.2s ease;
-
+  color: ${({ theme }) => theme.colors.text};
   &:hover {
     background-color: rgba(200, 210, 230, 1); /* más oscuro al hacer hover */
   }

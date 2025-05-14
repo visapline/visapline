@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,7 +15,7 @@ export const ContainerMain = styled.div`
   flex-direction: column;
   width: 99%;
   height: 95%;
-
+  gap: 20px;
 `;
 
 export const Encabezado = styled.div`
@@ -26,30 +25,28 @@ export const Encabezado = styled.div`
   width: 100%;
   min-height: 120px;
   border-radius: 10px;
-
   position: relative;
   overflow: hidden;
-  
+
   /* Fondo principal */
   background-color: ${({ theme }) => theme.colors.background2};
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  
-  
+
   /* Ondas decorativas a la derecha */
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
     width: 30%; /* Ancho de la zona de olas */
-  
+
     background-size: cover;
     background-position: right center;
     background-repeat: no-repeat;
   }
 
-  label{
+  label {
     width: 400px;
 
     display: flex;
@@ -67,8 +64,54 @@ export const Encabezado = styled.div`
     position: relative;
     z-index: 1;
   }
-
-
 `;
 
+export const Main = styled.div`
+  width: 100%;
+  flex: 1;
+`;
 
+export const SectionOne = styled.div`
+  width: 100%;
+  height: 400px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+`;
+
+export const ContainerGraficos = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  gap: 20px;
+`;
+
+export const ContainerGraficosContrato = styled.div`
+  width: 50%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors.background2};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+export const ContainerGraficosServicios = styled.div`
+  width: 50%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors.background2};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+`;
+
+export const ContainerInfoGeneral = styled.div`
+  width: 50%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors.background2};
+  border-radius: 20px;
+`;

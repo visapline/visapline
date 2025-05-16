@@ -11,8 +11,17 @@ export const ENV = {
       LOGIN: "/Auth/Login",
       GET_USER_BY_ID: "/Usuarios",
     },
-    GRUPOS: {
-      GETME_GRUPOS: "/Groups/user",
+
+    OLTS: {
+      GET_ALL: "/Olts",
+      PUERTOS: "Olts/seleccionar-puerto"
     },
+    TARJETAS: {
+      GET_ALL: "/Tarjetas",
+    },
+    PUERTOS: {
+      GET_ALL: "/Puertoes",
+    
+    }
   },
 };

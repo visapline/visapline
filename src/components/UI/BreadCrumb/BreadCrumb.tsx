@@ -12,7 +12,10 @@ const nameMap: Record<string, string> = {
   finanzas: "Finanzas",
   ingresos: "Ingresos",
   gestionredes: "Gestión Redes",
+
   redes: "Redes",
+  gestionolt: "Gestión OLT",
+  informacionolt: "informacion OLT",
   gestionterceros: "Gestión Terceros",
   terceros: "Terceros",
 };

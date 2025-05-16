@@ -1,4 +1,4 @@
-import { FiUsers, FiBarChart2, FiDollarSign } from "react-icons/fi";
+import { FiUsers, FiBarChart2, FiDollarSign, FiServer } from "react-icons/fi";
 import { FaHouseSignal, FaUsers } from "react-icons/fa6";
 import { IconType } from "react-icons";
 
@@ -64,6 +64,14 @@ export const moduleSections: ModuleSection[] = [
         title: "Gestión Redes",
         icon: FaHouseSignal,
         options: [{ name: "Redes", path: "/gestionredes/redes" }],
+      },
+      {
+        title: "Gestión OLT",
+        icon: FiServer,
+        options: [
+          { name: "OLT", path: "/gestionolt/olt" },
+          { name: "Informacion OLT", path: "gestionolt/informacionolt" },
+        ],
       },
     ],
   },

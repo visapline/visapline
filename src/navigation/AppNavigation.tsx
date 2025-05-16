@@ -8,6 +8,8 @@ import {
   Contrato,
   Redes,
   Terceros,
+  InformacionOlt,
+  Olt
 } from "../pages/UI";
 // Ejemplo de otra página
 
@@ -25,6 +27,8 @@ export const AppNavigation = () => {
           <Route path="finanzas/ingresos" element={<Ingresos />} />
           <Route path="gestionredes/redes" element={<Redes />} />
           <Route path="gestionterceros/terceros" element={<Terceros />} />
+           <Route path="gestionolt/olt" element={<Olt/>} />
+          <Route path="gestionolt/informacionolt" element={<InformacionOlt/>} />
         </Route>
       </Routes>
     </Router>

@@ -9,6 +9,7 @@ import {
   CheckboxContainer,
   FormRow,
   ContenedorconsultasOlt,
+  SectionTwo,
 } from "./InformacionOlt.styled";
 import { Breadcrumb } from "../../../../../components/UI/BreadCrumb";
 import {
@@ -17,6 +18,7 @@ import {
   TarjetaSelect,
   EstadoCheckbox,
   ConsultaButton,
+  TablaPuertos,
 } from "../../../../../components/UI/GestionRedes/OLT/InformacionOlt";
 import { InformacionOltLogic } from "./InformacionOlt.logic";
 
@@ -24,12 +26,16 @@ export function InformacionOlt() {
   const {
     olts,
     selectedOlt,
+    selectedPuerto,
     handleOltChange,
     puertosFiltrados,
     handlePuertoChange,
     tarjetasFiltradas,
     selectedTarjeta,
     handleTarjetaChange,
+    loading,
+    handleConsulta,
+    datosTabla,
   } = InformacionOltLogic();
 
   return (
@@ -58,16 +64,24 @@ export function InformacionOlt() {
                   <TarjetaSelect
                     options={tarjetasFiltradas}
                     onChange={handleTarjetaChange}
+                    disabled={!selectedOlt}
                   />
                   <PuertoSelect
                     options={puertosFiltrados}
                     onChange={handlePuertoChange}
+                    disabled={!selectedTarjeta}
                   />
-                  <ConsultaButton />
+                  <ConsultaButton
+                    onClick={handleConsulta}
+                    disabled={!selectedPuerto || loading}
+                  />
                 </FormRow>
               </ContenedorconsultasOlt>
             </ContenedorForm>
           </SectionOne>
+          <SectionTwo>
+            <TablaPuertos data={datosTabla} loading={loading} />
+          </SectionTwo>
         </Main>
       </ContainerMain>
     </PageContainer>

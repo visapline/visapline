@@ -39,4 +39,9 @@ const Select = styled.select`
   border: 1px solid gray;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 `;

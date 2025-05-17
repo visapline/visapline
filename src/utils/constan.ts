@@ -14,7 +14,7 @@ export const ENV = {
 
     OLTS: {
       GET_ALL: "/Olts",
-      PUERTOS: "Olts/seleccionar-puerto"
+      PUERTOS: "/Olts/seleccionar-puerto"
     },
     TARJETAS: {
       GET_ALL: "/Tarjetas",

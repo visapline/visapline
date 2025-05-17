@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ENV } from "../utils";
-import { OltDto, OltApiResponse } from "../types/olt";
+import { OltDto, OltApiResponse, PuertosApiResponse, PuertosRequest, DispositivoDto } from "../types/olt";
 
 export class Olt {
   async getAll(): Promise<OltDto[]> {
@@ -13,5 +13,14 @@ export class Olt {
     }));
 
     return result;
+  }
+
+
+
+
+  async getPuertosPorTarjeta(req: PuertosRequest): Promise<DispositivoDto[]> {
+    const url = `${ENV.API_URL}${ENV.ENDPOINTS.OLTS.PUERTOS}`;
+    const resp = await axios.post<PuertosApiResponse>(url, req);
+    return resp.data.dispositivos;
   }
 }

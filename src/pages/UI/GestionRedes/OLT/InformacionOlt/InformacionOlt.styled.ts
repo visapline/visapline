@@ -70,6 +70,9 @@ export const Encabezado = styled.div`
 export const Main = styled.div`
   width: 100%;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 `;
 
 export const SectionOne = styled.div`
@@ -115,3 +118,17 @@ export const CheckboxContainer = styled.div`
   flex-direction: column;
   margin-bottom: 10px;
 `;
+
+
+
+
+
+// section 2
+
+export const SectionTwo = styled.div`
+  width: 100%;
+
+  flex: 1;
+  display: flex;
+  border-radius: 20px;
+  `;
